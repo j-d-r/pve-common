@@ -25,12 +25,6 @@ PVE::JSONSchema::register_format('pem-certificate-chain', sub {
     return check_pem($content, noerr => $noerr, multiple => 1);
 });
 
-PVE::JSONSchema::register_format('pem-string', sub {
-    my ($content, $noerr) = @_;
-
-    return check_pem($content, noerr => $noerr, label => qr/.*?/);
-});
-
 PVE::JSONSchema::register_format('pem-string-multiple', sub {
     my ($content, $noerr) = @_;
 
